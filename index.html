@@ -13,13 +13,11 @@
         }
         
         a {
-            height: 128px;
-            width: 128px;
             float: left;
-            padding: 2px;
         }
         
         img {
+            padding: 4px;
             width: 64px;
             height: 64px;
         }
@@ -30,16 +28,34 @@
 </head>
 
 <body>
-    <div id="links">
-        <a href="https://google.com">
-            <img src='http://icons.duckduckgo.com/ip2/google.com.ico'></img>
-        </a>
-        <a href="https://markos-cv.herokuapp.com/">
-            <img src='http://icons.duckduckgo.com/ip2/markos-cv.herokuapp.com.ico'></img>
-        </a>
-    </div>
-    <div id="determinator">
-    </div>
+    <div id="links"></div>
 </body>
+<script>
+    let data = {
+        Google: "https://google.com",
+        Resume: "https://markos-cv.herokuapp.com",
+        Ceneje: "https://www.ceneje.si",
+        SPIN: "https://spin3.sos112.si/javno/zemljevid",
+        YahooFinance: "https://finance.yahoo.com/trending-tickers",
+        GoogleMaps: "https://www.google.com/maps/@46.3635713,14.1063595,3086m/data=!3m1!1e3!5m1!1e4"
+    }
+    let html = ""
+    for (let key in data) {
+        html += "<a href=" + data[key] + ">" +
+            '<img src="http://icons.duckduckgo.com/ip2/' + trimUrl(data[key]) + '.ico" >' +
+            "</a>"
+    }
+    console.log("html", html)
+    setHtml("links", html)
+
+    function trimUrl(urlToTrim) {
+        let remove = "https://"
+        return trimed = urlToTrim.replace(remove, "")
+    }
+
+    function setHtml(id, data) {
+        document.getElementById(id).innerHTML = data
+    }
+</script>
 
 </html>
