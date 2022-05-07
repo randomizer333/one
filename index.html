@@ -4,12 +4,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="image/jpg" href="https://static.vecteezy.com/system/resources/previews/000/437/234/original/globe-vector-icon.jpg" />
+    <link rel="shortcut icon" type="image/jpg" href="https://www.freeiconspng.com/uploads/terra-globe-icon-png-24.png" />
     <style>
         * {
             background-color: rgb(20, 41, 41);
             color: rgb(16, 165, 16);
             font-family: "Courier New", Courier, monospace;
+            /*border: 1px dotted red;*/
         }
         
         a {
@@ -21,6 +22,16 @@
             width: 64px;
             height: 64px;
         }
+        
+        form {
+            border: 2px solid greenyellow;
+            float: right;
+            padding: -2px;
+        }
+        
+        input {
+            border: 2px solid greenyellow;
+        }
     </style>
     <title>
         one
@@ -29,13 +40,15 @@
 
 <body>
     <div id="links"></div>
-    <form action="" method="post">
-        <label for="fname">Username:</label>
-        <input type="text" id="uName" name="uName"><br><br>
-        <label for="lname">Password:</label>
-        <input type="text" id="pWord" name="pWord"><br><br>
-        <input type="submit" value="Submit">
-    </form>
+    <div>
+        <form action="" method="post">
+            <label for="fname">Username:</label>
+            <input type="text" id="uName" name="uName"><br><br>
+            <label for="lname">Password:</label>
+            <input type="text" id="pWord" name="pWord"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </body>
 <script>
     let data = {
